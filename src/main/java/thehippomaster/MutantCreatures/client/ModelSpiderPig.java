@@ -1,0 +1,244 @@
+package thehippomaster.MutantCreatures.client;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
+import thehippomaster.AnimationAPI.client.ModelJoint;
+
+@SideOnly(Side.CLIENT)
+public class ModelSpiderPig extends ModelBase {
+   public static ModelRenderer snout;
+   public static ModelJoint head;
+   public static ModelRenderer base;
+   public static ModelRenderer body1;
+   public static ModelRenderer body2;
+   public static ModelRenderer butt;
+   public static ModelJoint frontLeg1;
+   public static ModelJoint frontLegF1;
+   public static ModelJoint frontLeg2;
+   public static ModelJoint frontLegF2;
+   public static ModelJoint middleLeg1;
+   public static ModelJoint middleLegF1;
+   public static ModelJoint middleLeg2;
+   public static ModelJoint middleLegF2;
+   public static ModelJoint backLeg1;
+   public static ModelJoint backLegF1;
+   public static ModelJoint backLeg2;
+   public static ModelJoint backLegF2;
+   public static final float PI = (float)Math.PI;
+
+   public ModelSpiderPig() {
+      this.textureWidth = 128;
+      this.textureHeight = 64;
+      base = new ModelRenderer(this);
+      base.setRotationPoint(0.0F, 14.5F, -2.0F);
+      body2 = new ModelRenderer(this, 32, 0);
+      body2.addBox(-3.0F, -3.0F, 0.0F, 6, 6, 10);
+      base.addChild(body2);
+      body1 = new ModelJoint(this, 64, 0);
+      body1.addBox(-3.5F, -3.5F, -9.0F, 7, 7, 9);
+      body1.setRotationPoint(0.0F, -1.0F, 1.5F);
+      body2.addChild(body1);
+      butt = new ModelRenderer(this, 0, 16);
+      butt.addBox(-5.0F, -4.5F, 0.0F, 10, 9, 12);
+      butt.setRotationPoint(0.0F, 0.0F, 7.0F);
+      body2.addChild(butt);
+      head = new ModelJoint(this, 0, 0);
+      head.addBox(-4.0F, -4.0F, -8.0F, 8, 8, 8);
+      head.setRotationPoint(0.0F, 0.0F, -8.0F);
+      body1.addChild(head);
+      snout = new ModelRenderer(this, 24, 0);
+      snout.addBox(-2.0F, 0.0F, -9.0F, 4, 3, 1);
+      head.addChild(snout);
+      frontLeg1 = new ModelJoint(this, 0, 37);
+      frontLeg1.addBox(-1.0F, 0.0F, -1.0F, 2, 12, 2);
+      frontLeg1.setRotationPoint(-3.5F, 0.0F, -5.0F);
+      body1.addChild(frontLeg1);
+      frontLegF1 = new ModelJoint(this, 8, 37);
+      frontLegF1.addBox(-1.0F, 0.0F, -1.0F, 2, 16, 2);
+      frontLegF1.setRotationPoint(-0.0F, 12.0F, -0.1F);
+      frontLeg1.addChild(frontLegF1);
+      frontLeg2 = new ModelJoint(this, 0, 37);
+      frontLeg2.mirror = true;
+      frontLeg2.addBox(-1.0F, 0.0F, -1.0F, 2, 12, 2);
+      frontLeg2.setRotationPoint(3.5F, 0.0F, -5.0F);
+      body1.addChild(frontLeg2);
+      frontLegF2 = new ModelJoint(this, 8, 37);
+      frontLegF2.mirror = true;
+      frontLegF2.addBox(-1.0F, 0.0F, -1.0F, 2, 16, 2);
+      frontLegF2.setRotationPoint(0.0F, 12.0F, 0.1F);
+      frontLeg2.addChild(frontLegF2);
+      middleLeg1 = new ModelJoint(this, 0, 37);
+      middleLeg1.addBox(-1.0F, 0.0F, -1.0F, 2, 12, 2);
+      middleLeg1.setRotationPoint(-3.5F, 0.0F, -3.0F);
+      body1.addChild(middleLeg1);
+      middleLegF1 = new ModelJoint(this, 8, 37);
+      middleLegF1.addBox(-1.0F, 0.0F, -1.0F, 2, 16, 2);
+      middleLegF1.setRotationPoint(0.0F, 12.0F, -0.1F);
+      middleLeg1.addChild(middleLegF1);
+      middleLeg2 = new ModelJoint(this, 0, 37);
+      middleLeg2.mirror = true;
+      middleLeg2.addBox(-1.0F, 0.0F, -1.0F, 2, 12, 2);
+      middleLeg2.setRotationPoint(3.5F, 0.0F, -3.0F);
+      body1.addChild(middleLeg2);
+      middleLegF2 = new ModelJoint(this, 8, 37);
+      middleLegF2.mirror = true;
+      middleLegF2.addBox(-1.0F, 0.0F, -1.0F, 2, 16, 2);
+      middleLegF2.setRotationPoint(0.0F, 12.0F, 0.1F);
+      middleLeg2.addChild(middleLegF2);
+      backLeg1 = new ModelJoint(this, 16, 37);
+      backLeg1.addBox(-2.0F, 0.0F, -2.0F, 4, 4, 4);
+      backLeg1.setRotationPoint(-2.5F, 2.0F, 7.0F);
+      body2.addChild(backLeg1);
+      backLegF1 = new ModelJoint(this, 16, 45);
+      backLegF1.addBox(-2.0F, 0.0F, -2.0F, 4, 4, 4, 0.2F);
+      backLegF1.setRotationPoint(0.0F, 3.0F, 0.0F);
+      backLeg1.addChild(backLegF1);
+      backLeg2 = new ModelJoint(this, 32, 37);
+      backLeg2.mirror = true;
+      backLeg2.addBox(-2.0F, 0.0F, -2.0F, 4, 4, 4);
+      backLeg2.setRotationPoint(2.5F, 2.0F, 7.0F);
+      body2.addChild(backLeg2);
+      backLegF2 = new ModelJoint(this, 16, 45);
+      backLegF2.mirror = true;
+      backLegF2.addBox(-2.0F, 0.0F, -2.0F, 4, 4, 4, 0.2F);
+      backLegF2.setRotationPoint(0.0F, 3.0F, 0.0F);
+      backLeg2.addChild(backLegF2);
+   }
+
+   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+      this.setAngles();
+      this.animate(entity, f, f1, f2, f3, f4, f5);
+      base.render(f5);
+   }
+
+   public void resetAngles(ModelRenderer... models) {
+      for(ModelRenderer model : models) {
+         model.rotateAngleX = 0.0F;
+         model.rotateAngleY = 0.0F;
+         model.rotateAngleZ = 0.0F;
+      }
+
+   }
+
+   public void setAngles() {
+      this.resetAngles(head, head.getModel(), body1, body2, butt);
+      this.resetAngles(frontLeg1, frontLeg1.getModel(), frontLegF1, frontLegF1.getModel(), frontLeg2, frontLeg2.getModel(), frontLegF2, frontLegF2.getModel());
+      this.resetAngles(middleLeg1, middleLeg1.getModel(), middleLegF1, middleLegF1.getModel(), middleLeg2, middleLeg2.getModel(), middleLegF2, middleLegF2.getModel());
+      this.resetAngles(backLeg1, backLeg1.getModel(), backLegF1, backLegF1.getModel(), backLeg2, backLeg2.getModel(), backLegF2, backLegF2.getModel());
+      ModelRenderer var10000 = body1;
+      var10000.rotateAngleX += ((float)Math.PI / 8F);
+      var10000 = body2;
+      var10000.rotateAngleX += -0.05235988F;
+      var10000 = butt;
+      var10000.rotateAngleX += 0.5711987F;
+      ModelJoint var3 = head;
+      var3.rotateAngleX += (-(float)Math.PI / 8F);
+      var3 = frontLeg1;
+      var3.rotateAngleX += -(body1.rotateAngleX + body2.rotateAngleX);
+      var3 = frontLeg1;
+      var3.rotateAngleY += (-(float)Math.PI / 3F);
+      ModelRenderer var6 = frontLeg1.getModel();
+      var6.rotateAngleZ += 2.0943952F;
+      ModelJoint var7 = frontLegF1;
+      var7.rotateAngleZ += -1.6534699F;
+      var7 = frontLeg2;
+      var7.rotateAngleX += -(body1.rotateAngleX + body2.rotateAngleX);
+      ++frontLeg2.rotateAngleY;
+      ModelRenderer var9 = frontLeg2.getModel();
+      var9.rotateAngleZ += -2.0943952F;
+      ++frontLegF2.rotateAngleZ;
+      ModelJoint var10 = middleLeg1;
+      var10.rotateAngleX += -(body1.rotateAngleX + body2.rotateAngleX);
+      var10 = middleLeg1;
+      var10.rotateAngleY += (-(float)Math.PI / 10F);
+      ModelRenderer var12 = middleLeg1.getModel();
+      var12.rotateAngleZ += 2.0399954F;
+      ModelJoint var13 = middleLegF1;
+      var13.rotateAngleZ += -1.6534699F;
+      var13 = middleLeg2;
+      var13.rotateAngleX += -(body1.rotateAngleX + body2.rotateAngleX);
+      var13 = middleLeg2;
+      var13.rotateAngleY += ((float)Math.PI / 10F);
+      ModelRenderer var16 = middleLeg2.getModel();
+      var16.rotateAngleZ += -2.0399954F;
+      ++middleLegF2.rotateAngleZ;
+      ModelJoint var17 = backLeg1;
+      var17.rotateAngleX += (-(float)Math.PI / 8F);
+      ModelRenderer var18 = backLeg1.getModel();
+      var18.rotateAngleZ += ((float)Math.PI / 8F);
+      ModelJoint var19 = backLegF1;
+      var19.rotateAngleZ += (-(float)Math.PI / 8F);
+      ModelRenderer var20 = backLegF1.getModel();
+      var20.rotateAngleX += 0.5711987F;
+      ModelJoint var21 = backLeg2;
+      var21.rotateAngleX += (-(float)Math.PI / 8F);
+      ModelRenderer var22 = backLeg2.getModel();
+      var22.rotateAngleZ += (-(float)Math.PI / 8F);
+      ModelJoint var23 = backLegF2;
+      var23.rotateAngleZ += ((float)Math.PI / 8F);
+      ModelRenderer var24 = backLegF2.getModel();
+      var24.rotateAngleX += 0.5711987F;
+   }
+
+   public void animate(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+      float moveAnim = MathHelper.sin(f * 0.9F) * f1;
+      float moveAnim_d = MathHelper.sin(f * 0.9F + 0.5F) * f1;
+      float moveAnim1 = MathHelper.sin(f * 0.9F + 0.3F) * f1;
+      float moveAnim1d = MathHelper.sin(f * 0.9F + 0.3F + 0.5F) * f1;
+      float moveAnim2 = MathHelper.sin(f * 0.9F + 0.9F) * f1;
+      float moveAnim2d = MathHelper.sin(f * 0.9F + 0.9F + 0.5F) * f1;
+      float moveAnim3 = MathHelper.sin(f * 0.9F - 0.3F) * f1;
+      float moveAnim3d = MathHelper.sin(f * 0.9F - 0.3F + 0.5F) * f1;
+      float moveAnim4 = MathHelper.sin(f * 0.9F - 0.9F) * f1;
+      float moveAnim4d = MathHelper.sin(f * 0.9F - 0.9F + 0.5F) * f1;
+      float breatheAnim = MathHelper.sin(f2 * 0.2F);
+      float faceYaw = f3 * (float)Math.PI / 180.0F;
+      float facePitch = f4 * (float)Math.PI / 180.0F;
+      ModelJoint var10000 = head;
+      var10000.rotateAngleX += breatheAnim * 0.02F;
+      ModelRenderer var21 = body1;
+      var21.rotateAngleX += breatheAnim * 0.005F;
+      var21 = butt;
+      var21.rotateAngleX += -breatheAnim * 0.015F;
+      var21 = head.getModel();
+      var21.rotateAngleX += facePitch;
+      var21 = head.getModel();
+      var21.rotateAngleY += faceYaw;
+      var21 = frontLeg1.getModel();
+      var21.rotateAngleZ += -moveAnim1 * (float)Math.PI / 6.0F;
+      var21 = frontLeg1.getModel();
+      var21.rotateAngleX += (-(float)Math.PI / 8F) * f1;
+      ModelJoint var27 = frontLegF1;
+      var27.rotateAngleZ += moveAnim1d * (float)Math.PI / 6.0F + 0.2617994F * f1;
+      ModelRenderer var28 = frontLeg2.getModel();
+      var28.rotateAngleZ += moveAnim2 * (float)Math.PI / 6.0F;
+      var28 = frontLeg2.getModel();
+      var28.rotateAngleX += (-(float)Math.PI / 8F) * f1;
+      ModelJoint var30 = frontLegF2;
+      var30.rotateAngleZ += -(moveAnim2d * (float)Math.PI / 6.0F + 0.2617994F * f1);
+      ModelRenderer var31 = middleLeg1.getModel();
+      var31.rotateAngleZ += -moveAnim3 * (float)Math.PI / 6.0F;
+      var31 = middleLeg1.getModel();
+      var31.rotateAngleX += -0.8975979F * f1;
+      ModelJoint var33 = middleLegF1;
+      var33.rotateAngleZ += moveAnim3d * (float)Math.PI / 6.0F + ((float)Math.PI / 8F) * f1;
+      ModelRenderer var34 = middleLeg2.getModel();
+      var34.rotateAngleZ += moveAnim4 * (float)Math.PI / 6.0F;
+      var34 = middleLeg2.getModel();
+      var34.rotateAngleX += -0.8975979F * f1;
+      ModelJoint var36 = middleLegF2;
+      var36.rotateAngleZ += -(moveAnim4d * (float)Math.PI / 6.0F + ((float)Math.PI / 8F) * f1);
+      var36 = backLeg1;
+      var36.rotateAngleX += -moveAnim4 * (float)Math.PI / 5.0F + 0.2617994F * f1;
+      var36 = backLeg2;
+      var36.rotateAngleX += -moveAnim1 * (float)Math.PI / 5.0F + 0.2617994F * f1;
+      ModelRenderer var39 = body2;
+      var39.rotateAngleX += -moveAnim * (float)Math.PI / 20.0F;
+      ModelJoint var40 = head;
+      var40.rotateAngleX += moveAnim * (float)Math.PI / 20.0F;
+   }
+}

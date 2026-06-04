@@ -1,0 +1,55 @@
+{
+	"mutantcreeper.living": {"category": "hostile", "sounds": [
+		"mutantcreeper/living1", "mutantcreeper/living2", "mutantcreeper/living3", "mutantcreeper/living4"
+	]},
+	"mutantcreeper.hurt": {"category": "hostile", "sounds": [
+		"mutantcreeper/hurt1", "mutantcreeper/hurt1"
+	]},
+	"mutantcreeper.fuse": {"category": "hostile", "sounds": ["mutantcreeper/fuse"]},
+	"mutantcreeper.chime": {"category": "hostile", "sounds": ["mutantcreeper/chime"]},
+	"mutantcreeper.egghatch": {"category": "hostile", "sounds": ["mutantcreeper/egghatch"]},
+	
+	
+	"mutantenderman.living": {"category": "hostile", "sounds": [
+		"mutantenderman/living1", "mutantenderman/living2"
+	]},
+	"mutantenderman.hit": {"category": "hostile", "sounds": [
+		"mutantenderman/hit1", "mutantenderman/hit2", "mutantenderman/hit3"
+	]},
+	"mutantenderman.death": {"category": "hostile", "sounds": ["mutantenderman/death"]},
+	"mutantenderman.scream": {"category": "hostile", "sounds": ["mutantenderman/scream"]},
+	"mutantenderman.stare": {"category": "hostile", "sounds": ["mutantenderman/stare"]},
+	
+	
+	"mutantskeleton.living": {"category": "hostile", "sounds": [
+		"mutantskeleton/living1", "mutantskeleton/living2", "mutantskeleton/living3"
+	]},
+	"mutantskeleton.hurt": {"category": "hostile", "sounds": [
+		"mutantskeleton/hurt1", "mutantskeleton/hurt2", "mutantskeleton/hurt3"
+	]},
+	"mutantskeleton.step": {"category": "hostile", "sounds": [
+		"mutantskeleton/step1", "mutantskeleton/step2", "mutantskeleton/step3"
+	]},
+	"mutantskeleton.death": {"category": "hostile", "sounds": ["mutantskeleton/death"]},
+	
+	
+	"mutantzombie.living": {"category": "hostile", "sounds": [
+		"mutantzombie/living1", "mutantzombie/living2", "mutantzombie/living3"
+	]},
+	"mutantzombie.roar": {"category": "hostile", "sounds": [
+		"mutantzombie/roar1", "mutantzombie/roar2"
+	]},
+	"mutantzombie.roarslow": {"category": "hostile", "sounds": [
+		"mutantzombie/roarslow1", "mutantzombie/roarslow2"
+	]},
+	"mutantzombie.snarl": {"category": "hostile", "sounds": [
+		"mutantzombie/snarl1", "mutantzombie/snarl2"
+	]},
+	"mutantzombie.gruntA": {"category": "hostile", "sounds": ["mutantzombie/gruntA"]},
+	"mutantzombie.gruntB": {"category": "hostile", "sounds": ["mutantzombie/gruntB"]},
+	
+	
+	"spiderpig.charge": {"category": "hostile", "sounds": [
+		"spiderpig/charge"
+	]}
+}

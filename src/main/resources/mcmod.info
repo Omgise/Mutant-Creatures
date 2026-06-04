@@ -1,0 +1,15 @@
+[{
+	"modid": "MutantCreatures",
+	"name": "Mutant Creatures",
+	"description": "A mod that adds a few mutant mini-bosses of the original Minecraft mobs.",
+	"version": "${version}",
+	"mcversion": "${mcversion}",
+	"logoFile": "",
+	"url": "http://www.minecraftforum.net/topic/1336132-/",
+	"updateUrl": "",
+	"authorList": ["thehippomaster21"],
+	"credits": "Forge Team, MCP Team",
+	"parent": "",
+	"screenshots": [],
+	"dependencies": []
+}]
