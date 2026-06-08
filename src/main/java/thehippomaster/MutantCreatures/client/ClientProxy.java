@@ -66,7 +66,10 @@ public class ClientProxy extends CommonProxy {
       this.addRenderer(EndermanClone.class, new RenderEndermanClone());
       this.addRenderer(MutantSnowGolem.class, new RenderMutantSnowGolem(0.7F));
       this.addRenderer(MutantSkeleton.class, new RenderMutantSkeleton(1.2F));
-      this.addRenderer(SpiderPig.class, new RenderSpiderPig(0.9F));
+
+      if (MutantCreatures.isSpiderPigEnabled()) {
+         this.addRenderer(SpiderPig.class, new RenderSpiderPig(0.9F));
+      }
    }
 
    private void addRenderer(Class<? extends Entity> class1, Render renderer) {

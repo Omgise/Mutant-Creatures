@@ -40,6 +40,10 @@ public class MCSpawnEgg extends Item {
    public String getItemStackDisplayName(ItemStack stack) {
       ModContainer container = FMLCommonHandler.instance().findContainerFor(MutantCreatures.instance);
       EntityRegistry.EntityRegistration registration = EntityRegistry.instance().lookupModSpawn(container, stack.getItemDamage());
+      if (registration == null) {
+         return super.getItemStackDisplayName(stack);
+      }
+
       return "Spawn " + StatCollector.translateToLocal("entity.MutantCreatures." + registration.getEntityName() + ".name");
    }
 
@@ -93,6 +97,10 @@ public class MCSpawnEgg extends Item {
       } else {
          ModContainer container = FMLCommonHandler.instance().findContainerFor(MutantCreatures.instance);
          EntityRegistry.EntityRegistration registration = EntityRegistry.instance().lookupModSpawn(container, id);
+         if (registration == null) {
+            return null;
+         }
+
          Entity entity = createEntity(registration.getEntityClass(), world);
          if (entity != null && entity instanceof EntityLiving) {
             EntityLiving living = (EntityLiving)entity;

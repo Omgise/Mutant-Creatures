@@ -186,14 +186,20 @@ public class MutantCreatures {
       EntityRegistry.registerModEntity(MutantSkeleton.class, "MutantSkeleton", 14, this, 80, 3, true);
       EntityRegistry.registerModEntity(SkeletonShot.class, "SkeletonShot", 15, this, 80, 3, true);
       EntityRegistry.registerModEntity(SkeletonPart.class, "SkeletonPart", 16, this, 64, 10, true);
-      EntityRegistry.registerModEntity(SpiderPig.class, "SpiderPig", 17, this, 80, 3, true);
+      if (spawnSpiderPig) {
+         EntityRegistry.registerModEntity(SpiderPig.class, "SpiderPig", 17, this, 80, 3, true);
+      }
+
       MCSpawnEgg.addEgg(MutantCreeper.class, 5349438, 11013646);
       MCSpawnEgg.addEgg(CreeperMinion.class, 894731, 12040119);
       MCSpawnEgg.addEgg(MutantZombie.class, 7969893, 44975);
       MCSpawnEgg.addEgg(MutantEnderman.class, 1447446, 8860812);
       MCSpawnEgg.addEgg(MutantSnowGolem.class, 15073279, 16753434);
       MCSpawnEgg.addEgg(MutantSkeleton.class, 12698049, 6310217);
-      MCSpawnEgg.addEgg(SpiderPig.class, 3419431, 15771042);
+
+      if (spawnSpiderPig) {
+         MCSpawnEgg.addEgg(SpiderPig.class, 3419431, 15771042);
+      }
       if (spawnCreeper) {
          EntityRegistry.addSpawn(MutantCreeper.class, 1, 1, 1, EnumCreatureType.monster, suitableBiomes);
       }
@@ -223,6 +229,10 @@ public class MutantCreatures {
 
    @EventHandler
    public void postInit(FMLPostInitializationEvent e) {
+   }
+
+   public static boolean isSpiderPigEnabled() {
+      return spawnSpiderPig;
    }
 
    public static boolean isClient() {

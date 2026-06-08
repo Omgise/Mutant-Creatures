@@ -353,7 +353,7 @@ public class SpiderPig extends EntityCreature implements IAnimals, IEntityOwnabl
          }
 
          boolean killedPrey = living instanceof EntityPig || living instanceof EntitySpider;
-         if (killedPrey) {
+         if (killedPrey && MutantCreatures.isSpiderPigEnabled()) {
             living.setDead();
             SpiderPig pig = new SpiderPig(this.worldObj);
             pig.setPositionAndRotation(living.posX, living.posY, living.posZ, living.rotationYaw, 0.0F);
