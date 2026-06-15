@@ -62,11 +62,12 @@ import thehippomaster.MutantCreatures.packet.PacketSnowGolemOwner;
 import thehippomaster.MutantCreatures.packet.PacketSpawnParticles;
 import thehippomaster.MutantCreatures.packet.PacketSpiderPigJump;
 import thehippomaster.MutantCreatures.packet.PacketZombieAttack;
+import thehippomaster.AnimationAPI.AnimationAPI;
 
 @Mod(
    modid = "MutantCreatures",
    name = "Mutant Creatures",
-   version = "1.4.9"
+   version = "1.1.1"
 )
 public class MutantCreatures {
    @Instance("MutantCreatures")
@@ -110,6 +111,7 @@ public class MutantCreatures {
 
    @EventHandler
    public void preInit(FMLPreInitializationEvent e) {
+      AnimationAPI.ensureInitialized();
       Configuration cfg = new Configuration(e.getSuggestedConfigurationFile());
       cfg.load();
       spawnrate = cfg.get("general", "Spawnrate", 10).getInt();
